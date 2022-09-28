@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "PreviousCommit": "",
+  "PreviousSha": "b5e74b900773e0d30411ae8377a1e85d40f41eb8",
   "Stops": {
     "10001": {
       "StopNumber": "10001",
@@ -14036,6 +14036,16 @@
       "StopNumber": "14250",
       "StopName": "",
       "StopAdress": "Koparan Mh. Koparan Küme Evleri Gölbaşı/Ankara"
+    },
+    "14251": {
+      "StopNumber": "14251",
+      "StopName": "BAĞLAR DURAĞI",
+      "StopAdress": "Bağiçi Mh. Bağiçi Zırva Küme Evleri Gölbaşı/Ankara"
+    },
+    "14252": {
+      "StopNumber": "14252",
+      "StopName": "BAĞLAR DURAĞI",
+      "StopAdress": "Bağiçi Mh. Bağiçi Zırva Küme Evleri Gölbaşı/Ankara"
     },
     "20001": {
       "StopNumber": "20001",
@@ -48744,12 +48754,12 @@
     },
     "57096": {
       "StopNumber": "57096",
-      "StopName": "",
+      "StopName": "MOLLA OMAR MEVKİ",
       "StopAdress": "Türkobası Mh. Kazan Temelli Otoyol Bağlantısı Sincan/Ankara"
     },
     "57097": {
       "StopNumber": "57097",
-      "StopName": "",
+      "StopName": "MOLLA OMAR MEVKİ",
       "StopAdress": "Türkobası Mh. Kazan Temelli Otoyol Bağlantısı Sincan/Ankara"
     },
     "57098": {
