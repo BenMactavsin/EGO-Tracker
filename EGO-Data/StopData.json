@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "PreviousSha": "b5e74b900773e0d30411ae8377a1e85d40f41eb8",
+  "PreviousSha": "",
   "Stops": {
     "10001": {
       "StopNumber": "10001",
@@ -16989,7 +16989,7 @@
     },
     "20789": {
       "StopNumber": "20789",
-      "StopName": "ANTARES",
+      "StopName": "ETLİK ŞEHİR HASTANESİ",
       "StopAdress": "Varlık Mh. Etlik Yürüyüş Yolu Yenimahalle/Ankara"
     },
     "20790": {
@@ -17039,7 +17039,7 @@
     },
     "20803": {
       "StopNumber": "20803",
-      "StopName": "ANTARES",
+      "StopName": "ETLİK ŞEHİR HASTANESİ",
       "StopAdress": "Ayvalı Mh. Halil Sezai Erkut Cd. Keçiören/Ankara"
     },
     "20804": {
