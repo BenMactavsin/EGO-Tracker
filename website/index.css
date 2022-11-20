@@ -1,0 +1,139 @@
+/*
+Main background: #2e2e2e
+List background: #252525
+List border: #222222
+Item added: #394d33
+Item changed: #857547
+Item removed: #602820
+Ribbon Tab: #353535
+Difference Text: #c8c8c8
+*/
+
+body {
+    background-color: #2e2e2e;
+}
+
+.difference-list {
+    background-color: #252525;
+
+    border: 2px solid #222222;
+
+    border-radius: 10px;
+
+    padding: 2px, 0, 2px;
+    margin: 10px;
+
+    position: absolute;
+    height: calc(100% - 20px);
+    width: calc(50% - 40px);
+
+    overflow: auto auto;
+    scroll-behavior: auto;
+
+    white-space: pre;
+    font-family: monospace, monospace;
+    font-size: medium;
+    color: #c8c8c8;
+    text-align: left;
+    font-size: 14px;
+    line-height: calc(1em + 6px);
+}
+
+#difference-list-0 {
+    left: 0;
+}
+
+#difference-list-1 {
+    left: 50%;
+}
+
+.difference-list > details:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.difference-list span {
+    width: 100%;
+    padding: 0 100% 0 3px;
+}
+
+.difference-list span::after {
+    content: "\a";
+
+    white-space: pre;
+}
+
+.difference-list details {
+    position: relative;
+    height: fit-content;
+    width: 100%;
+
+    overflow: hidden hidden;
+}
+
+.difference-list details > div {
+    padding-left: 5px;
+}
+
+.Changed, .Changed * {
+    background-color: #857547;
+}
+
+summary.Changed::before, span.Changed::before, .Changed summary::before, .Changed span::before {
+    content: "\21CB  ";
+
+    white-space: pre;
+    width: fit-content;
+}
+
+.Added, .Added * {
+    background-color: #394d33;
+}
+
+summary.Added::before, span.Added::before, .Added summary::before, .Added span::before {
+    content: "+ ";
+
+    white-space: pre;
+    width: fit-content;
+}
+
+
+.Removed, .Removed * {
+    background-color: #602820;
+}
+
+summary.Removed::before, span.Removed::before, .Removed summary::before, .Removed span::before {
+    content: "- ";
+
+    white-space: pre;
+    width: fit-content;
+}
+
+.None, .None * {
+    background-color: #252525;
+}
+
+summary.None::before, span.None::before, .None summary::before, .None span::before {
+    content: "  ";
+
+    white-space: pre;
+    width: fit-content;
+}
+
+.Empty, .Empty * {
+    background-color: inherit;
+
+    color: transparent;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+summary.Empty::before, span.Empty::before, .Empty summary::before, .Empty span::before {
+    content: "  ";
+
+    white-space: pre;
+    width: fit-content;
+}
