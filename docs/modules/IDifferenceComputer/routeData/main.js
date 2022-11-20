@@ -66,17 +66,17 @@ export const Main = {
                 DataCE_Route_Weekdays[1].appendChild(DataCE_Route_Weekdays_Content[1]);
                 DataCE_Route_Saturday[1].appendChild(DataCE_Route_Saturday_Content[1]);
                 DataCE_Route_Sunday[1].appendChild(DataCE_Route_Sunday_Content[1]);
-                for (let routeDeparture of DataC[0].RouteDepartures.Weekdays) {
+                for (let routeDeparture of DataC[1].RouteDepartures.Weekdays) {
                     const DataCE_Departure = HTMLDoubleElements.CreateDoubleSpanElements("", routeDeparture);
                     DataCE_Route_Weekdays_Content[0].appendChild(DataCE_Departure[0]);
                     DataCE_Route_Weekdays_Content[1].appendChild(DataCE_Departure[1]);
                 }
-                for (let routeDeparture of DataC[0].RouteDepartures.Saturday) {
+                for (let routeDeparture of DataC[1].RouteDepartures.Saturday) {
                     const DataCE_Departure = HTMLDoubleElements.CreateDoubleSpanElements("", routeDeparture);
                     DataCE_Route_Saturday_Content[0].appendChild(DataCE_Departure[0]);
                     DataCE_Route_Saturday_Content[1].appendChild(DataCE_Departure[1]);
                 }
-                for (let routeDeparture of DataC[0].RouteDepartures.Sunday) {
+                for (let routeDeparture of DataC[1].RouteDepartures.Sunday) {
                     const DataCE_Departure = HTMLDoubleElements.CreateDoubleSpanElements("", routeDeparture);
                     DataCE_Route_Sunday_Content[0].appendChild(DataCE_Departure[0]);
                     DataCE_Route_Sunday_Content[1].appendChild(DataCE_Departure[1]);
@@ -125,17 +125,17 @@ export const Main = {
                 DataCE_Route_Weekdays[1].appendChild(DataCE_Route_Weekdays_Content[1]);
                 DataCE_Route_Saturday[1].appendChild(DataCE_Route_Saturday_Content[1]);
                 DataCE_Route_Sunday[1].appendChild(DataCE_Route_Sunday_Content[1]);
-                for (let routeDeparture of DataC[1].RouteDepartures.Weekdays) {
+                for (let routeDeparture of DataC[0].RouteDepartures.Weekdays) {
                     const DataCE_Departure = HTMLDoubleElements.CreateDoubleSpanElements(routeDeparture, "");
                     DataCE_Route_Weekdays_Content[0].appendChild(DataCE_Departure[0]);
                     DataCE_Route_Weekdays_Content[1].appendChild(DataCE_Departure[1]);
                 }
-                for (let routeDeparture of DataC[1].RouteDepartures.Saturday) {
+                for (let routeDeparture of DataC[0].RouteDepartures.Saturday) {
                     const DataCE_Departure = HTMLDoubleElements.CreateDoubleSpanElements(routeDeparture, "");
                     DataCE_Route_Saturday_Content[0].appendChild(DataCE_Departure[0]);
                     DataCE_Route_Saturday_Content[1].appendChild(DataCE_Departure[1]);
                 }
-                for (let routeDeparture of DataC[1].RouteDepartures.Sunday) {
+                for (let routeDeparture of DataC[0].RouteDepartures.Sunday) {
                     const DataCE_Departure = HTMLDoubleElements.CreateDoubleSpanElements(routeDeparture, "");
                     DataCE_Route_Sunday_Content[0].appendChild(DataCE_Departure[0]);
                     DataCE_Route_Sunday_Content[1].appendChild(DataCE_Departure[1]);
