@@ -38,9 +38,9 @@ export const Main: DifferenceComputer.IDifferenceComputer<DataSchema_vC, DataSch
             const DataC: [DataSchema_vC["Routes"][number]?, DataSchema_vC["Routes"][number]?] = route
 
             const DataC_Departures: DataSchema_vC["Routes"][number]["RouteDepartures"] = {
-                Weekdays: Array.JoinWithoutDuplicates(DataC[0]?.RouteDepartures.Weekdays, DataC[1]?.RouteDepartures.Weekdays),
-                Saturday: Array.JoinWithoutDuplicates(DataC[0]?.RouteDepartures.Saturday, DataC[1]?.RouteDepartures.Saturday),
-                Sunday: Array.JoinWithoutDuplicates(DataC[0]?.RouteDepartures.Sunday, DataC[1]?.RouteDepartures.Sunday)
+                Weekdays: Array.SortWithAlphanumericCollator(Array.JoinWithoutDuplicates(DataC[0]?.RouteDepartures.Weekdays, DataC[1]?.RouteDepartures.Weekdays), (value: string) => (value)),
+                Saturday: Array.SortWithAlphanumericCollator(Array.JoinWithoutDuplicates(DataC[0]?.RouteDepartures.Saturday, DataC[1]?.RouteDepartures.Saturday), (value: string) => (value)),
+                Sunday: Array.SortWithAlphanumericCollator(Array.JoinWithoutDuplicates(DataC[0]?.RouteDepartures.Sunday, DataC[1]?.RouteDepartures.Sunday), (value: string) => (value))
             }
 
             if (DataC[0] === undefined) {
