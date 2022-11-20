@@ -37,12 +37,6 @@ export const Main: DifferenceComputer.IDifferenceComputer<DataSchema_vC, DataSch
         for (let route of Array.SortWithAlphanumericCollator(DataC_List, (value: typeof DataC_List[number]) => (value[0]?.RouteNumber || value[1].RouteNumber))) {
             const DataC: [DataSchema_vC["Routes"][number]?, DataSchema_vC["Routes"][number]?] = route
 
-            const DataC_Departures: DataSchema_vC["Routes"][number]["RouteDepartures"] = {
-                Weekdays: Array.SortWithAlphanumericCollator(Array.JoinWithoutDuplicates(DataC[0]?.RouteDepartures.Weekdays, DataC[1]?.RouteDepartures.Weekdays), (value: string) => (value)),
-                Saturday: Array.SortWithAlphanumericCollator(Array.JoinWithoutDuplicates(DataC[0]?.RouteDepartures.Saturday, DataC[1]?.RouteDepartures.Saturday), (value: string) => (value)),
-                Sunday: Array.SortWithAlphanumericCollator(Array.JoinWithoutDuplicates(DataC[0]?.RouteDepartures.Sunday, DataC[1]?.RouteDepartures.Sunday), (value: string) => (value))
-            }
-
             if (DataC[0] === undefined) {
                 const DataCE_Route_Details: [HTMLDetailsElement, HTMLDetailsElement] = HTMLDoubleElements.CreateLinkedDetailsElements("", `${DataC[1].RouteNumber} (${DataC[1].RouteName})`)
                 const DataCE_Route_Details_Content: [HTMLDivElement, HTMLDivElement] = HTMLDoubleElements.CreateDoubleDivElements()
@@ -87,21 +81,21 @@ export const Main: DifferenceComputer.IDifferenceComputer<DataSchema_vC, DataSch
                 DataCE_Route_Saturday[1].appendChild(DataCE_Route_Saturday_Content[1])
                 DataCE_Route_Sunday[1].appendChild(DataCE_Route_Sunday_Content[1])
 
-                for (let routeDeparture of DataC_Departures.Weekdays) {
+                for (let routeDeparture of DataC[0].RouteDepartures.Weekdays) {
                     const DataCE_Departure: [HTMLSpanElement, HTMLSpanElement] = HTMLDoubleElements.CreateDoubleSpanElements("", routeDeparture)
 
                     DataCE_Route_Weekdays_Content[0].appendChild(DataCE_Departure[0])
                     DataCE_Route_Weekdays_Content[1].appendChild(DataCE_Departure[1])
                 }
 
-                for (let routeDeparture of DataC_Departures.Saturday) {
+                for (let routeDeparture of DataC[0].RouteDepartures.Saturday) {
                     const DataCE_Departure: [HTMLSpanElement, HTMLSpanElement] = HTMLDoubleElements.CreateDoubleSpanElements("", routeDeparture)
 
                     DataCE_Route_Saturday_Content[0].appendChild(DataCE_Departure[0])
                     DataCE_Route_Saturday_Content[1].appendChild(DataCE_Departure[1])
                 }
 
-                for (let routeDeparture of DataC_Departures.Sunday) {
+                for (let routeDeparture of DataC[0].RouteDepartures.Sunday) {
                     const DataCE_Departure: [HTMLSpanElement, HTMLSpanElement] = HTMLDoubleElements.CreateDoubleSpanElements("", routeDeparture)
 
                     DataCE_Route_Sunday_Content[0].appendChild(DataCE_Departure[0])
@@ -158,21 +152,21 @@ export const Main: DifferenceComputer.IDifferenceComputer<DataSchema_vC, DataSch
                 DataCE_Route_Saturday[1].appendChild(DataCE_Route_Saturday_Content[1])
                 DataCE_Route_Sunday[1].appendChild(DataCE_Route_Sunday_Content[1])
 
-                for (let routeDeparture of DataC_Departures.Weekdays) {
+                for (let routeDeparture of DataC[1].RouteDepartures.Weekdays) {
                     const DataCE_Departure: [HTMLSpanElement, HTMLSpanElement] = HTMLDoubleElements.CreateDoubleSpanElements(routeDeparture, "")
 
                     DataCE_Route_Weekdays_Content[0].appendChild(DataCE_Departure[0])
                     DataCE_Route_Weekdays_Content[1].appendChild(DataCE_Departure[1])
                 }
 
-                for (let routeDeparture of DataC_Departures.Saturday) {
+                for (let routeDeparture of DataC[1].RouteDepartures.Saturday) {
                     const DataCE_Departure: [HTMLSpanElement, HTMLSpanElement] = HTMLDoubleElements.CreateDoubleSpanElements(routeDeparture, "")
 
                     DataCE_Route_Saturday_Content[0].appendChild(DataCE_Departure[0])
                     DataCE_Route_Saturday_Content[1].appendChild(DataCE_Departure[1])
                 }
 
-                for (let routeDeparture of DataC_Departures.Sunday) {
+                for (let routeDeparture of DataC[1].RouteDepartures.Sunday) {
                     const DataCE_Departure: [HTMLSpanElement, HTMLSpanElement] = HTMLDoubleElements.CreateDoubleSpanElements(routeDeparture, "")
 
                     DataCE_Route_Sunday_Content[0].appendChild(DataCE_Departure[0])
@@ -187,6 +181,12 @@ export const Main: DifferenceComputer.IDifferenceComputer<DataSchema_vC, DataSch
 
             //If both routes exist, this code will run.
             {
+                const DataC_Departures: DataSchema_vC["Routes"][number]["RouteDepartures"] = {
+                    Weekdays: Array.SortWithAlphanumericCollator(Array.JoinWithoutDuplicates(DataC[0].RouteDepartures.Weekdays, DataC[1].RouteDepartures.Weekdays), (value: string) => (value)),
+                    Saturday: Array.SortWithAlphanumericCollator(Array.JoinWithoutDuplicates(DataC[0].RouteDepartures.Saturday, DataC[1].RouteDepartures.Saturday), (value: string) => (value)),
+                    Sunday: Array.SortWithAlphanumericCollator(Array.JoinWithoutDuplicates(DataC[0].RouteDepartures.Sunday, DataC[1].RouteDepartures.Sunday), (value: string) => (value))
+                }
+                
                 const Is_RouteName_Same: boolean = DataC[0].RouteName === DataC[1].RouteName
                 const Is_RouteType_Same: boolean = DataC[0].RouteType === DataC[1].RouteType
                 const Is_RouteWeekdays_Same: boolean = (DataC[0].RouteDepartures.Weekdays.length === DataC_Departures.Weekdays.length) && (DataC[1].RouteDepartures.Weekdays.length === DataC_Departures.Weekdays.length)
